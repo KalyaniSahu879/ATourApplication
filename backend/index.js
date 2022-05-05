@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 app.use(express.json({limit:'30mb',extended:true}));
 app.use(express.urlencoded({limit:'30mb',extended:true}));
 app.use(cors());
-app.use('/user' , userRouter);
+app.use('/users' , userRouter);
 const mongoDbUrl = "mongodb+srv://kalyanisahu:kalyanisahu123@cluster0.capfc.mongodb.net/tourappDb?retryWrites=true&w=majority"
 
 mongoose.connect(mongoDbUrl).then((res)=>{
