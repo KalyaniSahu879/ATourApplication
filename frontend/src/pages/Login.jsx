@@ -35,7 +35,10 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(login({formValue, navigate, toast}))
+        if(email && password){
+
+          dispatch(login({formValue, navigate, toast}))
+        }
     };
     const onInputChange = (e) => {
        let {name,value} = e.target;
