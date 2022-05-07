@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import * as api from "../api";
-
+console.log(api);
 export const login = createAsyncThunk(
   "auth/login",
   async ({ formValue, navigate, toast },{rejectWithValue}) => {
@@ -51,6 +51,17 @@ const authSlice = createSlice({
     error: "",
     loading: false,
   },
+  reducers:{
+    setUser:(state,action)=>{
+      state.user = action.payload;
+    },
+    setLogout:(state,action)=>{
+      localStorage.clear();
+      state.user = null;
+
+    }
+  },
+
   extraReducers: {
     [login.pending]: (state, action) => {
       state.loading = true;
@@ -90,4 +101,6 @@ const authSlice = createSlice({
     },
   },
 });
+
+export const {setUser , setLogout} = authSlice.actions;
 export default authSlice.reducer;
