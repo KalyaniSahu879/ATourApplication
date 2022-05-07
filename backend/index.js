@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import morgan from 'morgan';
 import userRouter from './routes/user.js'
-//import tourRouter from './routes/tour.js'
+import tourRouter from './routes/tour.js'
 
 const port = 5000;
 
@@ -14,8 +14,12 @@ app.use(morgan("dev"));
 app.use(express.json({limit:'30mb',extended:true}));
 app.use(express.urlencoded({limit:'30mb',extended:true}));
 app.use(cors());
+
+
 app.use('/users' , userRouter);
-//app.use('/tour' , tourRouter);
+app.use('/tour' , tourRouter);
+
+
 const mongoDbUrl = "mongodb+srv://kalyanisahu:kalyanisahu123@cluster0.capfc.mongodb.net/tourappDb?retryWrites=true&w=majority"
 
 mongoose.connect(mongoDbUrl).then((res)=>{
