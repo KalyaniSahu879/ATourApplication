@@ -20,9 +20,9 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-
-      <ToastContainer/>
       <Header/>
+      <ToastContainer/>
+      
       <Routes>
         <Route path = '/' element = {<Home/>}/>
         <Route path = '/login' element = {<Login />}/>

@@ -11,9 +11,9 @@ const tourSchema = mongoose.Schema({
     type: Date,
     default: new Date(),
   },
-  likes: {
-    type: [String],
-    default: [],
+  likeCount: {
+    type: Number,
+    default: 0,
   },
 });
 
