@@ -30,7 +30,7 @@ function App() {
         <Route path = '/addTour' element = {<AddEditTour />}/>
         <Route path = '/editTour/:id' element = {<AddEditTour />}/>
       </Routes>
-      Hello
+      
     </div>
     </BrowserRouter>
   );
